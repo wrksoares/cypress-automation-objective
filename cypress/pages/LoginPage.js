@@ -1,19 +1,24 @@
 class LoginPage {
 
     visit() {
-        cy.visit('https://front.serverest.dev/login')
+        cy.visit('/login')
     }
 
     login(email, password) {
+        cy.get('[data-testid="email"]')
+            .should('be.visible')
+            .clear()
+            .type(email)
 
-        cy.get('[data-testid="email"]').type(email)
+        cy.get('[data-testid="senha"]')
+            .should('be.visible')
+            .clear()
+            .type(password)
 
-        cy.get('[data-testid="senha"]').type(password)
-
-        cy.get('[data-testid="entrar"]').click()
-
+        cy.get('[data-testid="entrar"]')
+            .should('be.enabled')
+            .click()
     }
-
 }
 
 export default new LoginPage()

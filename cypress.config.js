@@ -1,5 +1,6 @@
 const { defineConfig } = require("cypress");
 
+
 module.exports = defineConfig({
   allowCypressEnv: false,
 
@@ -7,5 +8,7 @@ module.exports = defineConfig({
     setupNodeEvents(on, config) {
       // implement node event listeners here
     },
+
+  baseUrl: 'https://front.serverest.dev'
   },
 });
