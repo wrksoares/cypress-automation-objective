@@ -32,7 +32,7 @@ describe('Product Search', () => {
     cy.get('[data-testid="botaoPesquisar"]')
       .click()
 
-    // ✅ STRONG ASSERTION: validate real product result
+    
     cy.get('.card-title')
       .should('contain.text', 'Logitech MX Vertical')
 
